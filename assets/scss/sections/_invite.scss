@@ -1,0 +1,180 @@
+@use "../variables" as *;
+@use "../mixins" as *;
+
+.invite {
+    width: 100%;
+
+    .content {
+        width: 100%;
+        font-size: 12px;
+
+        .time-block {
+            background: url('../../assets/images/time_bg.png');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            aspect-ratio: 568 / 606;
+            @include flex-center;
+            flex-direction: column;
+
+            .title {
+                font-size: 25px;
+                font-family: $font-PinyonScript;
+                margin-bottom: 7%;
+            }
+
+            .time {
+                font-size: 32px;
+                font-family: $font-gothamBold;
+                line-height: 1.2;
+            }
+
+            .lunar-date {
+                font-size: 9px;
+                font-family: $font-GothamLightItalic;
+            }
+
+            .logo {
+                max-width: 18px;
+                width: 100%;
+                height: auto;
+                margin-top: 7%;
+            }
+        }
+
+        .location-block {
+            background: url('../../assets/images/base_bg.png');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            aspect-ratio: 568 / 766;
+            padding-top: 5%;
+            .title {
+                font-family: $font-PinyonScript;
+                font-size: 36px;
+            }
+
+            .divider {
+                margin: 4% 0;
+                img {
+                    max-width: 26px;
+                    width: 100%;
+                    height: auto;
+                }
+            }
+
+            .name {
+                font-family: $font-gotham;
+                font-size: 21px;
+                text-transform: uppercase;
+            }
+            .address {
+                font-family: $font-GothamLightItalic;
+                font-size: 15px;
+                margin: 1% 0 3%;
+            }
+
+            .map-btn {
+                display: block;
+                font-family: $font-gotham;
+                text-decoration: none;
+                text-transform: uppercase;
+                color: #eef8f9ff;
+                background-color: $text-color;
+                font-size: 15px;
+                border: 1px solid $text-color;
+                border-radius: 15px;
+                width: 328px;
+                margin: 0 auto;
+                padding: 1%;
+                line-height: 1;
+            }
+
+            .location-img {
+                perspective: 1000px;
+
+                img {
+                    max-width: 528px;
+                    width: 100%;
+                    height: auto;
+                }
+            }
+            .logo {
+                position: relative;
+                top: -2%;
+                margin-bottom: 3%;
+                img {
+                    max-width: 35px;
+                    width: 100%;
+                    height: auto;
+                }
+            }
+            .subtext {
+                font-family: $font-gothamLight;
+                font-size: 9.6px;
+                line-height: 2;
+                letter-spacing: 1px;
+            }
+        }
+    }
+
+    @media (max-width: 568px) {
+        .content {
+            .time-block {
+                .title {
+                    font-size: calc((25 / 568) * 100vw);
+                }
+    
+                .time {
+                    font-size: calc((32 / 568) * 100vw);
+                }
+    
+                .lunar-date {
+                    font-size: calc((9 / 568) * 100vw);
+                }
+    
+                .logo {
+                    max-width: calc((18 / 568) * 100vw);
+                }
+            }
+            .location-block {
+                .title {
+                    font-size: calc((36 / 568) * 100vw);
+                }
+    
+                .divider {
+                    img {
+                        max-width: calc((26 / 568) * 100vw);
+                    }
+                }
+    
+                .name {
+                    font-size: calc((21 / 568) * 100vw);
+                }
+                .address {
+                    font-size: calc((15 / 568) * 100vw);
+                }
+    
+                .map-btn {
+                    font-size: calc((15 / 568) * 100vw);
+                    width: calc((328 / 568) * 100vw);
+                }
+    
+                .location-img {
+                    img {
+                        max-width: calc((528 / 568) * 100vw);
+                    }
+                }
+                .logo {
+                    img {
+                        max-width: calc((35 / 568) * 100vw);
+                    }
+                }
+                .subtext {
+                    font-size: calc((9.6 / 568) * 100vw);
+                    letter-spacing: calc((1 / 568) * 100vw);
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,114 @@
+@use "../variables" as *;
+@use "../mixins" as *;
+
+.timeline {
+    width: 100%;
+    .content {
+        width: 100%;
+        background: url('../../assets/images/timeline_bg.png') no-repeat center / cover;
+        aspect-ratio: 568 / 309;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        color: #eef8f9ff;
+        .title {
+            font-family: $font-PinyonScript;
+            font-size: 36px;
+            font-weight: 300;
+            margin-bottom: 8%;
+        }
+
+        .items {
+            display: flex;
+            justify-content: center;
+            width: 60%;
+            .item {
+                flex: 1;
+                .time {
+                    font-family: $font-SVN-Gilroy-Bold;
+                    font-size: 11px;
+                }
+                .line-box {
+                    position: relative;
+                    transform: translateX(50%);
+                    margin: 20% 0;
+                    .line {
+                        width: 100%;
+                        height: 2px;
+                        background-color: #eef8f9ff;
+                    }
+                    &::before {
+                        content: "";
+                        position: absolute;
+                        width: 8px;
+                        aspect-ratio: 1;
+                        background-color:  #eef8f9ff;
+                        border-radius: 50%;
+                        left: 0;
+                        top: 0;
+                        transform: translate(-50%,-40%);
+                    }
+                }
+
+                .icon {
+                    img {
+                        max-width: 22px;
+                        width: 100%;
+                        height: auto;
+                    }
+                }
+
+                .label {
+                    font-size: 11px;
+                    font-family: $font-SVN-Gilroy-Xlight;
+                    text-transform: uppercase;
+                    margin-top: 5%;
+                    line-height: 1.3;
+                }
+
+                &:last-of-type {
+                    .line-box {
+                        .line {
+                            visibility: hidden;
+                        }
+                    }
+                }
+            }
+            &.nha-gai {
+                width: 95%;
+            }
+        }
+    }
+
+    @media (max-width: 500px) {
+        .content {
+            .title {
+                font-size: calc((36 / 500) * 100vw);
+            }
+
+            .items {
+                .item {
+                    .time {
+                        font-size: calc((11 / 500) * 100vw);
+                    }
+                    .line-box {
+                        &::before {
+                            width: calc((8 / 500) * 100vw);
+                        }
+                    }
+    
+                    .icon {
+                        img {
+                            max-width: calc((22 / 500) * 100vw);
+                        }
+                    }
+    
+                    .label {
+                        font-size: calc((11 / 500) * 100vw);
+                    }
+                }
+            }
+        }
+    }
+}

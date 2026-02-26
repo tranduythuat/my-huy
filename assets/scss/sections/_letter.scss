@@ -1,0 +1,154 @@
+@use "../variables" as *;
+@use "../mixins" as *;
+
+.letter-section {
+    width: 100%;
+    max-width: 500px;
+
+    .content {
+        width: 100%;
+        aspect-ratio: 500 / 888;
+        background: url('../../assets/images/letter_bg.png');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        color: #eef8f9ff;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.439);
+        position: relative;
+        cursor: pointer;
+        perspective: 1000px;
+        .logo {
+            margin-bottom: 15%;
+            img {
+                max-width: 48px;
+                width: 100%;
+                height: auto;
+            }
+        }
+
+        .names {
+            margin-bottom: 4%;
+            font-size: 54px;
+            font-family: $font-PinyonScript;
+            text-align: center;
+        }
+
+        .divider {
+            margin:10% 0 9%;
+            img {
+                max-width: 45px;
+                width: 100%;
+                height: auto;
+            }
+        }
+
+        .welcome {
+            font-family: $font-gotham;
+            font-size: 10.5px;
+            margin-bottom: 1.5%;
+        }
+        .subtext {
+            font-family: $font-gothamLight;
+            font-size: 10.5px;
+        }
+
+        .open-card {
+            display: block;
+            @include flex-center;
+            font-family: $font-gotham;
+            text-decoration: none;
+            text-transform: uppercase;
+            color: $text-color;
+            background-color: #eef8f9ff;
+            font-size: 12px;
+            border: 1px solid $text-color;
+            border-radius: 15px;
+            margin: 0 auto;
+            padding: 2%;
+            line-height: 1;
+            width: 35%;
+            margin-top: 5%;
+        }
+    }
+
+    @media (max-width: 500px) {
+        .content {
+            .logo {
+                img {
+                    max-width: calc((48 / 500) * 100vw);
+                }
+            }
+    
+            .names {
+                font-size: calc((54 / 500) * 100vw);
+            }
+    
+            .divider {
+                img {
+                    max-width: calc((45 / 500) * 100vw);
+                }
+            }
+    
+            .welcome, .subtext  {
+                font-size: calc((10.5 / 500) * 100vw);
+            }
+    
+            .open-card {
+                font-size: calc((12 / 500) * 100vw);
+            }
+        }
+    }
+}
+
+// div:where(.swal2-container) div:where(.swal2-popup) {
+//     padding: 0 !important;
+// }
+
+// div:where(.swal2-container) div:where(.swal2-html-container) {
+//     display: flex !important;
+//     justify-content: center;
+//     align-items: center;
+// }
+
+// .wedding-lang-popup {
+//     border-radius: 18px !important;
+//     border: 1px solid rgba(74, 111, 165, 0.2);
+//     aspect-ratio: 3 / 1;
+
+//     .btn-group {
+//         width: 100%;
+//         display: flex;
+//         justify-content: center;
+//         align-items: center;
+//         gap: 10%;
+//     }
+
+//     .lang-btn {
+//         display: block;
+//         width: 40%;
+//         padding: 2% 5%;
+//         font-family: $font-ICIELBCOLDSTYLE;
+//         font-size: 12px;
+//         background: transparent;
+//         border: 2px solid $text-color;
+//         color: $text-color;
+//         border-radius: 30px;
+//         cursor: pointer;
+//         transition: all 0.3s ease;
+//     }
+
+//     .lang-btn:hover {
+//         background: $text-color;
+//         color: #fff;
+//     }
+
+//     @media (max-width: 500px) {
+//         .lang-btn {
+//             font-size: calc((12 / 500) * 100vw);
+//         }
+//     }
+// }

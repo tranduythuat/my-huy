@@ -1,0 +1,90 @@
+@use "../variables" as *;
+@use "../mixins" as *;
+
+.hero {
+    width: 100%;
+    .content {
+        aspect-ratio: 568 / 710;
+        background: url('../../assets/images/base_bg.png') no-repeat center / cover;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        perspective: 1000px;
+        // .tagline {
+        //     font-family: $font-UVNBUCTHU;
+        //     font-size: 24px;
+        //     margin-bottom: 12%;
+        // }
+
+        img.logo {
+            max-width: 55px;
+            width: 100%;
+            height: auto;
+            top: 50%;
+            transform: translateY(-40%);
+        }
+        .box-heart {
+            @include flex-center;
+            margin: 11% 0;
+            position: relative;
+            img.frame {
+                max-width: 312px;
+                width: 100%;
+                height: auto;
+            }
+            .text {
+                position: absolute;
+                font-size: 29px;
+                font-family: $font-PinyonScript;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+        }
+        .welcome, .invite-text {
+            font-family: $font-gotham;
+            font-size: 13.5px;
+            text-transform: uppercase;
+            line-height: 1.7;
+        }
+        .invite-text {
+            font-family: $font-gothamLight;
+            margin-bottom: 4%;
+
+        }
+        .names {
+            font-family: $font-PinyonScript;
+            font-size: 30px;
+            line-height: 1;
+        }
+    }
+
+    @media (max-width: 568px) {
+        .content {
+            .logo {
+                img {
+                    max-width: calc((94 / 568) * 100vw);
+                }
+            }
+            img.logo {
+                max-width: calc((55 / 568) * 100vw);
+            }
+            .box-heart {
+                img.frame {
+                    max-width: calc((312 / 568) * 100vw);
+                }
+                .text {
+                    font-size: calc((29 / 568) * 100vw);
+                }
+            }
+            .welcome, .invite-text {
+                font-size: calc((13.5 / 568) * 100vw);
+            }
+            .names {
+                font-size: calc((30 / 568) * 100vw);
+            }
+        }
+    }
+}
