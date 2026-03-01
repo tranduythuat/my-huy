@@ -406,8 +406,8 @@ header {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  aspect-ratio: 568/766;
-  padding-top: 5%;
+  aspect-ratio: 568/525;
+  padding-top: 10%;
 }
 .invite .content .location-block .title {
   font-family: "PinyonScript", sans-serif;
@@ -455,8 +455,7 @@ header {
   height: auto;
 }
 .invite .content .location-block .logo {
-  position: relative;
-  top: -2%;
+  margin-top: 10%;
   margin-bottom: 3%;
 }
 .invite .content .location-block .logo img {
@@ -741,7 +740,7 @@ header {
   visibility: hidden;
 }
 .timeline .content .items.nha-gai {
-  width: 95%;
+  width: 62%;
 }
 @media (max-width: 500px) {
   .timeline .content .title {
@@ -784,6 +783,10 @@ header {
   font-size: 36px;
   font-weight: 300;
   margin-top: 7%;
+}
+.dresscode .content .subtext {
+  font-size: 11px;
+  text-transform: uppercase;
 }
 .dresscode .content .colors-grid {
   display: flex;
@@ -831,26 +834,26 @@ header {
 .faqs .content {
   width: 100%;
   aspect-ratio: 500/806;
-  background: url("../../assets/images/faqs_bg.png") no-repeat center/cover;
-  color: #faf6ee;
+  background: url("../../assets/images/base_bg.png") no-repeat center/cover;
+  color: #2b6769;
   display: flex;
   justify-content: start;
   align-items: center;
   flex-direction: column;
 }
 .faqs .content .title {
-  font-size: 54px;
-  font-family: "Bellamy-Stevenson", sans-serif;
+  font-size: 32px;
+  font-family: "PinyonScript", sans-serif;
   margin-top: 10%;
 }
 .faqs .content .faq-container {
-  font-family: "1FTV-VIP-Qerginas", sans-serif;
-  max-width: 400px;
+  font-family: "SVN-GothamBook", sans-serif;
+  max-width: 480px;
   width: 100%;
   margin-top: 8%;
 }
 .faqs .content .faq-container .faq-item {
-  border: 2px solid rgba(255, 255, 255, 0.6);
+  border: 2px solid #2b6769;
   border-radius: 8px;
   margin-bottom: 2%;
   overflow: hidden;
@@ -859,7 +862,7 @@ header {
   width: 100%;
   background: transparent;
   font-family: inherit;
-  color: #fff;
+  color: #2b6769;
   padding: 3% 4% 2%;
   display: flex;
   justify-content: space-between;
@@ -874,7 +877,7 @@ header {
   line-height: 1;
 }
 .faqs .content .faq-container .faq-item .faq-content {
-  color: #fff;
+  color: #2b6769;
   height: 0;
   overflow: hidden;
 }
@@ -883,12 +886,18 @@ header {
   padding: 0 4% 3%;
   font-size: 12px;
 }
+.faqs .content .faq-container .faq-item .faq-content a {
+  display: block;
+  font-size: 14px;
+  color: #2b6769;
+  margin-bottom: 2%;
+}
 @media (max-width: 500px) {
   .faqs .content .title {
-    font-size: 10.8vw;
+    font-size: 6.4vw;
   }
   .faqs .content .faq-container {
-    max-width: 80vw;
+    max-width: 96vw;
   }
   .faqs .content .faq-container .faq-item .faq-header {
     font-size: 3.2vw;
@@ -1373,7 +1382,7 @@ header {
   background-repeat: no-repeat;
   background-size: cover;
   display: flex;
-  justify-content: center;
+  justify-content: start;
   align-items: center;
   flex-direction: column;
   color: #eef8f9;
@@ -1381,12 +1390,17 @@ header {
   position: relative;
   cursor: pointer;
   perspective: 1000px;
+  padding-top: 15%;
 }
 .letter-section .content .logo {
   margin-bottom: 15%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .letter-section .content .logo img {
-  max-width: 48px;
+  max-width: 65px;
   width: 100%;
   height: auto;
 }
@@ -1397,10 +1411,14 @@ header {
   text-align: center;
 }
 .letter-section .content .divider {
-  margin: 10% 0 9%;
+  margin: 15% 0 20%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .letter-section .content .divider img {
-  max-width: 45px;
+  max-width: 55px;
   width: 100%;
   height: auto;
 }
@@ -1440,7 +1458,7 @@ header {
     font-size: 10.8vw;
   }
   .letter-section .content .divider img {
-    max-width: 9vw;
+    max-width: 11vw;
   }
   .letter-section .content .welcome, .letter-section .content .subtext {
     font-size: 2.1vw;

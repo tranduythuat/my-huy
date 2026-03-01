@@ -47,8 +47,8 @@
             background-repeat: no-repeat;
             background-size: cover;
             background-position: center;
-            aspect-ratio: 568 / 766;
-            padding-top: 5%;
+            aspect-ratio: 568 / 525;
+            padding-top: 10%;
             .title {
                 font-family: $font-PinyonScript;
                 font-size: 36px;
@@ -100,8 +100,7 @@
                 }
             }
             .logo {
-                position: relative;
-                top: -2%;
+                margin-top: 10%;
                 margin-bottom: 3%;
                 img {
                     max-width: 35px;
