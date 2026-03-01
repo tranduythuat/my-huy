@@ -820,6 +820,9 @@ header {
   .dresscode .content h2 {
     font-size: 6.338028169vw;
   }
+  .dresscode .content .subtext {
+    font-size: 1.9366197183vw;
+  }
   .dresscode .content .colors-grid .item .color img {
     max-width: 7.9225352113vw;
   }
