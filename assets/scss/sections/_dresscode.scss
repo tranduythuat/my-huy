@@ -5,7 +5,7 @@
     width: 100%;
     .content {
         width: 100%;
-        aspect-ratio: 568 / 380;
+        aspect-ratio: 568 / 340;
         perspective: 1000px;
         background: url('../../assets/images/base_bg.png') no-repeat center / cover;
         padding-bottom: 17%;
@@ -19,13 +19,13 @@
         }
         h2 {
             font-family: $font-PinyonScript;
-            font-size: 36px;
+            font-size: 46px;
             font-weight: 300;
             margin-top: 7%;
         }
 
         .subtext {
-            font-size: 11px;
+            font-size: 14px;
             text-transform: uppercase;
         }
 
@@ -63,11 +63,11 @@
     @media (max-width: 568px) {
         .content {
             h2 {
-                font-size: calc((36 / 568) * 100vw);
+                font-size: calc((46 / 568) * 100vw);
             }
 
             .subtext {
-                font-size: calc((11 / 568) * 100vw);
+                font-size: calc((14 / 568) * 100vw);
             }
     
 

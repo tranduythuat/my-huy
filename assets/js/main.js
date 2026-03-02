@@ -456,7 +456,7 @@
     gsap.registerPlugin(ScrollTrigger);
     initAnimations();
     // initSwiper();
-    // initMusic();
+    initMusic();
     initDresscodeAnimation();
     // initTimeline();
     initFAQ();

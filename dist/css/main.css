@@ -112,6 +112,7 @@ section {
   position: fixed;
   bottom: 10px;
   right: 1%;
+  cursor: pointer;
 }
 .music-box .label {
   display: flex;
@@ -122,20 +123,20 @@ section {
 }
 .music-box .label span {
   position: absolute;
-  right: -20%;
-  width: 100%;
-  font-family: "Lora", sans-serif;
+  right: -23%;
+  width: 105%;
+  font-family: "SVN-GothamBook", sans-serif;
   font-size: 12px;
-  background-color: rgb(138, 121, 89);
+  background-color: rgb(100, 137, 130);
   color: antiquewhite;
-  padding: 3% 0% 3% 20%;
+  padding: 3% 5% 5% 20%;
   border-top-left-radius: 25px;
   border-bottom-left-radius: 25px;
   opacity: 0.9;
 }
 .music-box .player {
   max-width: 55px;
-  width: 100%;
+  width: 105%;
   aspect-ratio: 1;
   z-index: 9999;
   display: flex;
@@ -291,7 +292,6 @@ header {
   width: 100%;
 }
 .hero .content {
-  aspect-ratio: 568/710;
   background: url("../../assets/images/base_bg.png") no-repeat center/cover;
   width: 100%;
   height: 100%;
@@ -305,14 +305,13 @@ header {
   max-width: 55px;
   width: 100%;
   height: auto;
-  top: 50%;
-  transform: translateY(-40%);
+  margin-top: 12%;
 }
 .hero .content .box-heart {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 11% 0;
+  margin: 10% 0;
   position: relative;
 }
 .hero .content .box-heart img.frame {
@@ -337,10 +336,42 @@ header {
   font-family: "SVN-GothamLight", sans-serif;
   margin-bottom: 4%;
 }
-.hero .content .names {
+.hero .content .family-info {
+  display: flex;
+  width: 100%;
+  padding: 5% 0 8%;
+}
+.hero .content .family-info .family-block {
+  perspective: 1000px;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.hero .content .family-info .family-block .img {
+  width: 200px;
+  aspect-ratio: 1/1.4;
+  overflow: hidden;
+  border-radius: 25px;
+  background-color: #2b6769;
+}
+.hero .content .family-info .family-block .img img {
+  width: 100%;
+  height: 100%;
+  background-color: #2b6769;
+  visibility: hidden;
+}
+.hero .content .family-info .family-block .name {
   font-family: "PinyonScript", sans-serif;
   font-size: 30px;
   line-height: 1;
+  margin: 8% 0 5%;
+}
+.hero .content .family-info .family-block .parents {
+  font-size: 14px;
+  font-family: "SVN-Gilroy-Bold", sans-serif;
+  line-height: 1.5;
 }
 @media (max-width: 568px) {
   .hero .content .logo img {
@@ -360,6 +391,44 @@ header {
   }
   .hero .content .names {
     font-size: 5.2816901408vw;
+  }
+  .hero .content .family-info .family-block .img {
+    width: 35.2112676056vw;
+  }
+  .hero .content .family-info .family-block .name {
+    font-size: 5.2816901408vw;
+  }
+  .hero .content .family-info .family-block .parents {
+    font-size: 2.4647887324vw;
+  }
+}
+
+.love-story {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: justify;
+  text-align-last: center;
+  font-size: 12px;
+  font-family: "SVN-GothamBook", sans-serif;
+  padding: 6%;
+  background: url("../../assets/images/base_bg.png") no-repeat center/cover;
+}
+.love-story .title {
+  font-size: 36px;
+  font-family: "PinyonScript", sans-serif;
+  margin-bottom: 5%;
+}
+.love-story p {
+  margin-bottom: 5%;
+}
+@media (max-width: 568px) {
+  .love-story {
+    font-size: 2.1126760563vw;
+  }
+  .love-story .title {
+    font-size: 6.338028169vw;
   }
 }
 
@@ -765,7 +834,7 @@ header {
 }
 .dresscode .content {
   width: 100%;
-  aspect-ratio: 568/380;
+  aspect-ratio: 568/340;
   perspective: 1000px;
   background: url("../../assets/images/base_bg.png") no-repeat center/cover;
   padding-bottom: 17%;
@@ -780,12 +849,12 @@ header {
 }
 .dresscode .content h2 {
   font-family: "PinyonScript", sans-serif;
-  font-size: 36px;
+  font-size: 46px;
   font-weight: 300;
   margin-top: 7%;
 }
 .dresscode .content .subtext {
-  font-size: 11px;
+  font-size: 14px;
   text-transform: uppercase;
 }
 .dresscode .content .colors-grid {
@@ -818,10 +887,10 @@ header {
 }
 @media (max-width: 568px) {
   .dresscode .content h2 {
-    font-size: 6.338028169vw;
+    font-size: 8.0985915493vw;
   }
   .dresscode .content .subtext {
-    font-size: 1.9366197183vw;
+    font-size: 2.4647887324vw;
   }
   .dresscode .content .colors-grid .item .color img {
     max-width: 7.9225352113vw;
@@ -836,7 +905,7 @@ header {
 }
 .faqs .content {
   width: 100%;
-  aspect-ratio: 500/806;
+  aspect-ratio: 500/500;
   background: url("../../assets/images/base_bg.png") no-repeat center/cover;
   color: #2b6769;
   display: flex;
@@ -1155,22 +1224,14 @@ header {
 .rsvp .content .rsvp-form .form-group .form-select {
   font-family: "Lora", sans-serif;
   width: 100%;
-  padding: 2% 4%;
-  border-radius: 8px;
+  padding: 1.6% 3%;
+  border-radius: 25px;
   background: transparent;
-  font-size: 14px;
-  color: #faf6ee;
+  font-size: 12px;
+  color: #2b6769;
   outline: none;
-  border: 2px solid #faf6ee;
+  border: 2px solid #2b6769;
   transition: border-color 0.3s ease;
-  appearance: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  background-image: url("../../assets/images/chevron_icon.png");
-  background-repeat: no-repeat;
-  background-position: right 10px center;
-  background-size: 9px;
-  padding-right: 45px;
   cursor: pointer;
 }
 .rsvp .content .rsvp-form .form-group .wish-label {
