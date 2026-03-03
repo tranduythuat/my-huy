@@ -73,6 +73,196 @@
       .from(".color3", { x: -100, opacity: 0, duration: 0.8 }, "-=0.4");
   }
 
+  function initPage() {
+    const tl = gsap.timeline({ paused: true });
+    const audio = document.querySelector("#audio");
+
+    tl.to(".letter-section", {
+      opacity: 0,
+      duration: 0.8
+    })
+    .set(".letter-section", { display: "none" })
+    .set(".container .content", { opacity: 0 })
+    .set(".container", { display: "block" })
+    .to(".container", {
+      opacity: 1,
+      onComplete: () => {
+
+        // 💥 Reset ScrollTrigger
+        // ScrollTrigger.refresh();
+
+        // 💥 Nếu cần reset toàn bộ animation
+        // gsap.globalTimeline.clear();
+
+        // 💥 Re-init animation cho container
+        initAnimations();
+        // initDresscodeAnimation();
+        // initTimeline();
+        ScrollTrigger.refresh();
+      }
+    });
+
+    document.getElementById("open-card").addEventListener("click", (e) => {
+      if (audio && audio.paused) {
+        audio.play().catch(err => {
+          console.log("Autoplay blocked:", err);
+        });
+      }
+      tl.play();
+    });
+  }
+
+  function initLetterAnimation() {
+    const section = qs(".letter-section");
+    if (!section) return;
+
+    const content = section.querySelector(".content");
+    const logo = section.querySelector(".logo-img");
+    const husband = section.querySelector(".husband");
+    const ampersand = section.querySelector(".ampersand");
+    const wife = section.querySelector(".wife");
+    const divider = section.querySelector(".divider-img");
+
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: section,
+        start: "top 95%",
+        toggleActions: "play none none none",
+      }
+    });
+
+    // =========================
+    // Section intro
+    // =========================
+
+
+    tl.fromTo(
+      content,
+      { opacity: 0, y: 50, filter: "blur(10px)" },
+      {
+        opacity: 1,
+        y: 0,
+        filter: "blur(0px)",
+        duration: 1,
+        ease: "power2.out",
+        clearProps: "filter"
+      }
+    );
+
+    tl.from(
+      logo,
+      {
+        rotateY: -180,
+        scale: 0.8,
+        opacity: 0,
+        duration: 1.5,
+        ease: "back.out(1.2)",
+        transformOrigin: "center center"
+      },
+      "-=0.5"
+    );
+
+    tl.fromTo(
+      husband,
+      { opacity: 0, x: -30 },
+      {
+        opacity: 1,
+        x: 0,
+        duration: 1,
+        ease: "power2.out",
+      },
+      "-=1"
+    );
+
+    tl.fromTo(
+      ampersand,
+      { opacity: 0, y: 50, filter: "blur(10px)" },
+      {
+        opacity: 1,
+        y: 0,
+        filter: "blur(0px)",
+        duration: 1,
+        ease: "power2.out",
+        clearProps: "filter"
+      },
+      "-=1"
+    );
+
+    tl.fromTo(
+      wife,
+      { opacity: 0, x: 30 },
+      {
+        opacity: 1,
+        x: 0,
+        duration: 1,
+        ease: "power2.out",
+      },
+      "-=1"
+    );
+
+    tl.fromTo(
+      divider,
+      {
+        rotation: -120,
+        scale: 0,
+        opacity: 0
+      },
+      {
+        rotation: 0,
+        scale: 1,
+        opacity: 1,
+        duration: 1.2,
+        ease: "back.out(1.6)",
+        transformOrigin: "50% 50%"
+      },
+      "-=0.4"
+    );
+
+    tl.fromTo(
+      ".welcome",
+      { opacity: 0, y: 50, filter: "blur(10px)" },
+      {
+        opacity: 1,
+        y: 0,
+        filter: "blur(0px)",
+        duration: 1,
+        ease: "power2.out",
+        clearProps: "filter"
+      },
+      "-=0.8"
+    );
+
+
+    tl.fromTo(
+      ".subtext",
+      { opacity: 0, y: 50, filter: "blur(10px)" },
+      {
+        opacity: 1,
+        y: 0,
+        filter: "blur(0px)",
+        duration: 1,
+        ease: "power2.out",
+        clearProps: "filter"
+      },
+      "-=0.8"
+    );
+
+    tl.fromTo(
+      ".open-card",
+      { opacity: 0, y: 50, filter: "blur(10px)" },
+      {
+        opacity: 1,
+        y: 0,
+        filter: "blur(0px)",
+        duration: 1,
+        ease: "power2.out",
+        clearProps: "filter"
+      },
+      "-=0.8"
+    );
+    // tl.from(date, { y: 100, opacity: 0 }, "-=0.4");
+  }
+
   /* ======================================================
        TIMELINE ANIMATION
     ====================================================== */
@@ -295,11 +485,11 @@
       name,
       confirm,
       guest_number,
-      guests_name,
+      related,
       phone,
-      message,
+      wish,
     } = data;
-   
+
     // =========================
     // i18n Messages
     // =========================
@@ -339,7 +529,7 @@
       didOpen: () => Swal.showLoading(),
     });
 
-    const sheetURL = "?sheet=bride";
+    const sheetURL = "https://script.google.com/macros/s/AKfycbzvbEuZRN41vdFafnZab9GJ1lx-2VPpSJpgY5wb6VsWOZZBFPDeATXAX2eGc6WGSld1zA/exec?sheet=nha-gai";
 
     try {
       const res = await fetch(sheetURL, {
@@ -349,9 +539,9 @@
           name,
           confirm,
           guest_number,
-          guests_name,
+          related,
           phone,
-          message,
+          wish,
         }),
       });
 
@@ -454,10 +644,12 @@
 
   function init() {
     gsap.registerPlugin(ScrollTrigger);
-    initAnimations();
+    initPage();
+    initLetterAnimation();
+    // initAnimations();
     // initSwiper();
     initMusic();
-    initDresscodeAnimation();
+    // initDresscodeAnimation();
     // initTimeline();
     initFAQ();
     initRSVP();

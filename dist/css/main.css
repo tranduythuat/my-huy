@@ -85,6 +85,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
 }
 
 section {
@@ -104,6 +105,8 @@ section {
   overflow: hidden;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.281);
   color: #2b6769;
+  display: none;
+  opacity: 0;
 }
 
 /* music */
@@ -979,6 +982,9 @@ header {
   }
   .faqs .content .faq-container .faq-item .faq-content p {
     font-size: 2.4vw;
+  }
+  .faqs .content .faq-container .faq-item .faq-content a {
+    font-size: 2.8vw;
   }
 }
 
