@@ -23,7 +23,7 @@
         perspective: 1000px;
         padding-top: 15%;
         .logo {
-            margin-bottom: 15%;
+            margin-bottom: 10%;
             width: 100%;
             @include flex-center;
             img {
@@ -38,14 +38,15 @@
             font-size: 54px;
             font-family: $font-PinyonScript;
             text-align: center;
+            line-height: 1.2;
         }
 
         .divider {
-            margin: 15% 0 20%;
+            margin: 5% 0 5%;
             width: 100%;
             @include flex-center;
             img {
-                max-width: 55px;
+                max-width: 180px;
                 width: 100%;
                 height: auto;
             }
@@ -94,7 +95,7 @@
     
             .divider {
                 img {
-                    max-width: calc((55 / 500) * 100vw);
+                    max-width: calc((180 / 500) * 100vw);
                 }
             }
     
