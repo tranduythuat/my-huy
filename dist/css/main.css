@@ -293,11 +293,10 @@ header {
 }
 .hero {
   width: 100%;
+  background: url("../../assets/images/base_bg.png") no-repeat center/cover;
 }
 .hero .content {
-  background: url("../../assets/images/base_bg.png") no-repeat center/cover;
   width: 100%;
-  height: 100%;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -353,8 +352,9 @@ header {
   flex-direction: column;
 }
 .hero .content .family-info .family-block .img {
-  width: 200px;
-  aspect-ratio: 1/1.4;
+  max-width: 200px;
+  width: 100%;
+  aspect-ratio: 1/1.5;
   overflow: hidden;
   border-radius: 25px;
   background-color: #2b6769;
@@ -375,6 +375,18 @@ header {
   font-size: 14px;
   font-family: "SVN-Gilroy-Bold", sans-serif;
   line-height: 1.5;
+}
+.hero .content .family-info .family-block.groom-block .img {
+  background-image: url("https://pub-d341ea7ec201435598469d75d8c4a056.r2.dev/huy-my/25106018776358767781.jpg");
+  background-repeat: no-repeat;
+  background-size: 185%;
+  background-position: 17% 82%;
+}
+.hero .content .family-info .family-block.bride-block .img {
+  background-image: url("https://pub-d341ea7ec201435598469d75d8c4a056.r2.dev/huy-my/81ea215e73b3fdeda4a22.jpg");
+  background-repeat: no-repeat;
+  background-size: 387%;
+  background-position: 43% 64%;
 }
 @media (max-width: 568px) {
   .hero .content .logo img {
@@ -685,11 +697,11 @@ header {
 
 .our-story {
   width: 100%;
+  aspect-ratio: 500/1057;
+  background: url("../../assets/images/ourstory_bg_bottom.png") no-repeat bottom/contain, url("https://pub-d341ea7ec201435598469d75d8c4a056.r2.dev/han-ngoc/_DSC0483.webp") no-repeat top/contain;
 }
 .our-story .content {
   width: 100%;
-  aspect-ratio: 500/1057;
-  background: url("../../assets/images/ourstory_bg_bottom.png") no-repeat bottom/contain, url("https://pub-d341ea7ec201435598469d75d8c4a056.r2.dev/han-ngoc/_DSC0483.webp") no-repeat top/contain;
   display: flex;
   justify-content: flex-end;
   align-items: center;

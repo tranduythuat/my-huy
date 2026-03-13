@@ -3,11 +3,10 @@
 
 .hero {
     width: 100%;
+    background: url('../../assets/images/base_bg.png') no-repeat center / cover;
     .content {
         // aspect-ratio: 568 / 710;
-        background: url('../../assets/images/base_bg.png') no-repeat center / cover;
         width: 100%;
-        height: 100%;
         display: flex;
         justify-content: center;
         flex-direction: column;
@@ -67,8 +66,9 @@
                 flex-direction: column;
 
                 .img {
-                    width: 200px;
-                    aspect-ratio: 1 / 1.4;
+                    max-width: 200px;
+                    width: 100%;
+                    aspect-ratio: 1 / 1.5;
                     overflow: hidden;
                     border-radius: 25px;
                     background-color: $text-color;
@@ -92,6 +92,20 @@
                     font-family: $font-SVN-Gilroy-Bold;
                     line-height: 1.5;
                 }
+
+                &.groom-block .img {
+                    background-image: url('https://pub-d341ea7ec201435598469d75d8c4a056.r2.dev/huy-my/25106018776358767781.jpg');
+                    background-repeat: no-repeat;
+                    background-size: 185%;
+                    background-position: 17% 82%;
+                }   
+
+                &.bride-block .img {
+                    background-image: url('https://pub-d341ea7ec201435598469d75d8c4a056.r2.dev/huy-my/81ea215e73b3fdeda4a22.jpg');
+                    background-repeat: no-repeat;
+                    background-size: 387%;
+                    background-position: 43% 64%;
+                }  
             }
         }
     }

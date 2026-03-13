@@ -4,11 +4,11 @@
 
 .our-story {
     width: 100%;
+    aspect-ratio: 500 / 1057;
+    background: url('../../assets/images/ourstory_bg_bottom.png') no-repeat bottom / contain, 
+                url('https://pub-d341ea7ec201435598469d75d8c4a056.r2.dev/han-ngoc/_DSC0483.webp') no-repeat top / contain;
     .content {
         width: 100%;
-        aspect-ratio: 500 / 1057;
-        background: url('../../assets/images/ourstory_bg_bottom.png') no-repeat bottom / contain, 
-                    url('https://pub-d341ea7ec201435598469d75d8c4a056.r2.dev/han-ngoc/_DSC0483.webp') no-repeat top / contain;
         display: flex;
         justify-content: flex-end;
         align-items: center;
